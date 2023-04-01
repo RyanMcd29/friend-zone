@@ -62,9 +62,9 @@ module.exports = {
             { $push: { friends: req.params.friendId }},
             { new: true },
             (err, results) => {
-                if (result) {
-                    res.status(200).json(result);
-                    console.log(`Updated: ${result}`)
+                if (results) {
+                    res.status(200).json(results);
+                    console.log(`Updated: ${results}`)
                 } else {
                     console.log('Update failed')
                     res.status(500).json({ message: 'something went wrong'})
