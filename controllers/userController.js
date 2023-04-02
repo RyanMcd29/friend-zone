@@ -30,13 +30,13 @@ module.exports = {
             { _id: req.params.userId }, 
             req.body, 
             { new: true },
-            (err, results) => {
+            (err, result) => {
                 if (result) {
                     res.status(200).json(result);
                     console.log(`Updated: ${result}`)
                 } else {
                     console.log('Update failed')
-                    res.status(500).json({ message: 'something went wrong' })
+                    res.status(500).json({ message: 'Something went wrong' })
                 }
             }
 
