@@ -20,7 +20,7 @@ module.exports = {
     },
     // Create new thought
     createThought(req, res) {
-        Thought.ceate(req.body)
+        Thought.create(req.body)
             .then((thought) => res.json(thought))
             .catch((err) => res.status(500).json(err));
     },
@@ -81,9 +81,4 @@ module.exports = {
                 : res.json(thought)
             )
     },
-
-    
-            
-    
-
 }

@@ -61,10 +61,10 @@ module.exports = {
             { _id: req.params.userId},
             { $push: { friends: req.params.friendId }},
             { new: true },
-            (err, results) => {
-                if (results) {
-                    res.status(200).json(results);
-                    console.log(`Updated: ${results}`)
+            (err, result) => {
+                if (result) {
+                    res.status(200).json(result);
+                    console.log(`Updated: ${result}`)
                 } else {
                     console.log('Update failed')
                     res.status(500).json({ message: 'something went wrong'})
@@ -78,7 +78,7 @@ module.exports = {
             { _id: req.params.userId},
             { $pull: { friends: req.params.friendId }},
             { new: true },
-            (err, results) => {
+            (err, result) => {
                 if (result) {
                     res.status(200).json(result);
                     console.log(`Updated: ${result}`)
