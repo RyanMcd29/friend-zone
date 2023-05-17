@@ -9,7 +9,8 @@ const thoughtSchema = new mongoose.Schema({
         },
         createdAt: {
             type: Date,
-            default: Date.now,
+            get: (date) => { 
+                if (date) return date.toISOString().split("T") [0] }
         },
         userName: {
             type: String,
@@ -19,7 +20,9 @@ const thoughtSchema = new mongoose.Schema({
             [ Reaction ],
     },
     {
+        timestamps: true,
         toJSON: {
+            getters: true,
             virtuals: true
         },
     }

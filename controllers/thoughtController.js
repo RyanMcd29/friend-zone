@@ -1,4 +1,5 @@
 const { Thought, Reaction, User } = require('../models')
+const timeSince = require('../utils/helpers')
 
 module.exports = {
     // Get all thoughts
