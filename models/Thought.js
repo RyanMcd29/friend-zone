@@ -9,6 +9,7 @@ const thoughtSchema = new mongoose.Schema({
         },
         createdAt: {
             type: Date,
+            default: Date.now,
             get: (date) => { 
                 if (date) return date.toISOString().split("T") [0] }
         },
